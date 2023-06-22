@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="kladinoExamen.registro">
+
+    <?estilo expicito?>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="labelStyle" TargetType="Label">
+                <Setter Property = "TextColor" Value="Fuchsia" />
+                <Setter Property = "FontSize"  Value="20" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="lbUsuario" FontSize="14" TextColor="red" HorizontalTextAlignment="End" />
+            <Label Text="REGISTRO" FontSize="24" HorizontalTextAlignment="Center" Style="{StaticResource labelStyle}"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Nombre" Grid.Row="0" Grid.Column="0" Style="{StaticResource labelStyle}"/>
+                <Entry x:Name="txtNombre" Placeholder="Nombre" Grid.Row="1" Grid.Column="0"/>
+
+                <Label Text="Apellido" Grid.Row="0" Grid.Column="1" Style="{StaticResource labelStyle}"/>
+                <Entry x:Name="txtApellido" Placeholder="Apellido" Grid.Row="1" Grid.Column="1"/>
+
+                <Label Text="Edad" Grid.Row="0" Grid.Column="2" Style="{StaticResource labelStyle}"/>
+                <Entry x:Name="txtedad" Placeholder="Edad" Keyboard="Numeric" Grid.Row="1" Grid.Column="2"/>
+
+                <Label Text=""/>            
+                
+            </Grid>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Fecha" Grid.Row="0" Grid.Column="0" Style="{StaticResource labelStyle}"/>
+                <DatePicker x:Name="dpFechas" Date="06/05/2023" Format="M/d/yyyy" Grid.Row="0" Grid.Column="1"></DatePicker>
+
+                <Label Text="Pais" Grid.Row="1" Grid.Column="0" Style="{StaticResource labelStyle}"/>
+                <Picker x:Name="dpPais" Title="Paises" SelectedIndexChanged="dpPais_SelectedIndexChanged" Grid.Row="1" Grid.Column="1">//se puede ubir con la base de datos
+                    <Picker.Items>
+                        <x:String>Ecuador
+                        </x:String>
+                        <x:String>Peru
+                        </x:String>
+                        <x:String>Colombia
+                        </x:String>
+                        <x:String>Estado Unidos
+                        </x:String>
+                        <x:String>Costa Rica
+                        </x:String>
+                    </Picker.Items>
+                </Picker>
+
+
+                <Label Text="Ciudad" Grid.Row="2" Grid.Column="0" Style="{StaticResource labelStyle}"/>
+                <Picker x:Name="dpCiudad" Title="Ciudad" SelectedIndexChanged="dpCiudad_SelectedIndexChanged" Grid.Row="2" Grid.Column="1">
+                    <Picker.Items>
+                        <x:String>Quito
+                        </x:String>
+                        <x:String>Guayaquil
+                        </x:String>
+                        <x:String>Ambato
+                        </x:String>
+                        <x:String>Cuenca
+                        </x:String>
+                        <x:String>Galapagos
+                        </x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Label Text="Monto Inicial" Grid.Row="3" Grid.Column="0" Style="{StaticResource labelStyle}"/>
+                <Entry x:Name="txtMontoInicial" Placeholder="Monto Inicial" TextChanged="txtMontoInicial_TextChanged_1" Grid.Row="3" Grid.Column="1"/>
+
+                <Label Text="Pago Mensual" Grid.Row="4" Grid.Column="0" Style="{StaticResource labelStyle}"/>
+                <Entry x:Name="txtePagoMensual" Placeholder="PagoMensual" Grid.Row="4" Grid.Column="1"/>
+
+                <Button x:Name="btnPagoM" Text="Pago Mensual" Clicked="btnPagoM_Clicked" Grid.Row="5" Grid.Column="0"/>
+
+                <Button x:Name="btnResumen" Text="Resumen" Clicked="btnResumen_Clicked" Grid.Row="5" Grid.Column="1"/>
+
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
